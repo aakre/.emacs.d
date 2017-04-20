@@ -67,7 +67,7 @@
 (add-hook 'after-init-hook 'global-flycheck-mode)
 (flycheck-tip-use-timer 'verbose)
 
-(provide 'setup-programming)
+
 
 
 ;; Source code tagging
@@ -88,3 +88,6 @@
 
 ;; Find definitions in current buffer
 (setq-local imenu-create-index-function #'ggtags-build-imenu-index)
+
+(provide 'setup-programming)
+;;; setup-programming.el ends here

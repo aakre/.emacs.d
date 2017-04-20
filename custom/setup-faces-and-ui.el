@@ -41,3 +41,4 @@
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
 
 (provide 'setup-faces-and-ui)
+;;; setup-faces-and-ui.el ends here

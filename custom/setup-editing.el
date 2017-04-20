@@ -1,5 +1,9 @@
+;;; Editing environment --- Custom setup
+
+;;; Commentary:
+
+;; Code:
 ;; GROUP: Editing -> Editing Basics
-(provide 'setup-editing)
 (setq global-mark-ring-max 5000
     mark-ring-max 5000
     mode-require-final-newline t
@@ -246,6 +250,6 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "C-o") 'prelude-smart-open-line)
 (global-set-key (kbd "M-o") 'open-line)
 
-
-(message "Loaded setup-editing.el")
+(provide 'setup-editing)
+;;; Setup-editing.el ends here
 

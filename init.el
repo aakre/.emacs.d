@@ -5,6 +5,9 @@
 ;;; Code:
 (package-initialize)
 
+;; Bring dead keys back to life
+(require 'iso-transl)
+
 ;; Remove splash screen
 (setq inhibit-startup-screen t)
 
@@ -23,7 +26,7 @@
 
 
 ;; Add line numbers in programming mode
-(add-hook 'prog-mode-hook 'linum-mode)
+;;(add-hook 'prog-mode-hook 'linum-mode)
 
 
 ;; Removes the freakisly accessible kill-emacs key binding
@@ -37,13 +40,14 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 
-
 ;; ;;;;;;;;;;;;;;;;;;
 ;; ;; Load modules ;;           
 ;; ;;;;;;;;;;;;;;;;;;
 (require 'setup-editing)
 (require 'setup-programming)
 (require 'setup-faces-and-ui)
+(require 'setup-org-mode)
+(require 'plantuml-mode)
 
 
 ;;;;;;;;;;;;;;;;;;;
@@ -75,7 +79,7 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-
+;; Lets you incrementally expand a region
 (require 'expand-region)
 (global-set-key (kbd "M-m") 'er/expand-region)
 
@@ -96,8 +100,17 @@
 (load-theme 'zenburn t)
 
 
+
+;; File browser
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(setq neo-window-width '35)
 
 
+;; Latex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(setq TeX-PDF-mode t)
 
+;;; init.el ends here
