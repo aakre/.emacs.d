@@ -101,5 +101,14 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
+(provide 'init)
+;;; init.el ends here
 
+;; Function template
+
+;; (defun function-name (arguments...)
+;;   "documentation"
+;;   (interactive argument-passing-info) ; optional
+;;   body...
+;;   )
 
