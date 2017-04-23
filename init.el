@@ -8,22 +8,24 @@
 ;; Remove splash screen
 (setq inhibit-startup-screen t)
 
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 
 ;; Set buffer width
 (set-fill-column 80)
 
 ;; Add custom directory to the load path
-(add-to-list 'load-path "/home/olaa/.emacs.d/custom")
+(add-to-list 'load-path "~/.emacs.d/custom")
 
 ;; Load all files in the custom directory
-(mapc 'load (directory-files "/home/olaa/.emacs.d/custom" t ".*\.el"))
+(mapc 'load (directory-files "~/.emacs.d/custom" t ".*\.el"))
 
 ;; I'm lazy, y or n is enough
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 
 ;; Add line numbers in programming mode
-(add-hook 'prog-mode-hook 'linum-mode)
+;;(add-hook 'prog-mode-hook 'linum-mode)
 
 
 ;; Removes the freakisly accessible kill-emacs key binding
