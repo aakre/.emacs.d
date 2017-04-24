@@ -11,15 +11,17 @@
 ;; Remove splash screen
 (setq inhibit-startup-screen t)
 
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 
 ;; Set buffer width
 (set-fill-column 80)
 
 ;; Add custom directory to the load path
-(add-to-list 'load-path "/home/olaa/.emacs.d/custom")
+(add-to-list 'load-path "~/.emacs.d/custom")
 
 ;; Load all files in the custom directory
-(mapc 'load (directory-files "/home/olaa/.emacs.d/custom" t ".*\.el"))
+(mapc 'load (directory-files "~/.emacs.d/custom" t ".*\.el"))
 
 ;; I'm lazy, y or n is enough
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -38,6 +40,7 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 
 
 ;; ;;;;;;;;;;;;;;;;;;
@@ -118,4 +121,13 @@
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 
+(provide 'init)
 ;;; init.el ends here
+
+;; Function template
+
+;; (defun function-name (arguments...)
+;;   "documentation"
+;;   (interactive argument-passing-info) ; optional
+;;   body...
+;;   )
