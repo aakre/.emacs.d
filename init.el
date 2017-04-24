@@ -49,6 +49,9 @@
 (require 'setup-org-mode)
 (require 'plantuml-mode)
 
+;; Associate .dot files with plantuml-mode
+(add-to-list 'auto-mode-alist '("\\.dot\\'" . plantuml-mode))
+
 
 ;;;;;;;;;;;;;;;;;;;
 ;; Load packages ;;           
@@ -112,5 +115,7 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 (setq TeX-PDF-mode t)
+(add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
 
 ;;; init.el ends here
